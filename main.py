@@ -36,10 +36,17 @@ from datetime import datetime
 import json
 from pybit.unified_trading import HTTP
 
+# get my secret LOCAL_CONFIG:
+import socket
+if socket.gethostname() == 'sereno':
+	from config_local import *
+
+
 def s(n):
 	try: n = int(n)
 	except Exception as e: n = 0
 	return 's' if n>1 else ''
+
 
 def main():
 	time_mark = datetime.today().strftime('%Y-%m-%d %H:%M:%S')

@@ -20,8 +20,8 @@ sign_buy	= '🟢'
 sign_sell	= '🔴'
 
 # notify via Telegram, bot:
-TMapiToken	= '6975060974:AAF3MblXLT0q2plsge7pNt3OMsogo-8fXBc' # '' means do not send
-TMchatID	= '723039352' # to user personally, '' means DO NOT SEND
+TMapiToken	= '' # '' means do not send
+TMchatID	= '' # to user personally, '' means DO NOT SEND
 
 
 if __name__ == '__main__':
