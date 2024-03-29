@@ -23,3 +23,6 @@ You can send to a group or to user account personally, see `config.py`.
 **Docs:** https://bybit-exchange.github.io/docs/v5/intro
 
 **Installation:** `pip install pybit`
+
+**Telegram message example:<br/>**
+<img src="screenshot1.png" alt="Telegram message">
