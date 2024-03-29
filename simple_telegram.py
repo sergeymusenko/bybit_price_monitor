@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# by www.ShellHacks.com
 '''\
 simple_telegram.py - Super simple Telegram message sender
 
