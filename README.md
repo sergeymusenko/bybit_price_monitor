@@ -6,9 +6,10 @@ https://github.com/sergeymusenko/bybit_price_monitor
 
 Works as cron script. Start it each hour.<br/>
 Checks prices of coins comparing to price levels in `coinlist.py` and sends Telegram signals on moving close.<br/>
-Not using Bybit authorization.
+Not using Bybit authorization.<br/>
+Can check prices on 'linear' (futures) or 'spot' market, see `config.py`.
 
-In message:
+In Telegram message:
 
 - "green" mark means we going down to the price level - time to buy,
 - "red" mark means we going up to the price level - time to sell.
