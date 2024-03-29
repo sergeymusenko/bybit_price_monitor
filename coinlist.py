@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-__project__	= "Price monitor for Bybit, send to Telegram"
-__part__	= 'Coins config'
+__project__ = "Price monitor for Bybit, send to Telegram"
+__part__    = 'Coins config'
 
 
 coinlist = {

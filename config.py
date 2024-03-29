@@ -12,16 +12,16 @@ __version__  = "0.1"
 __status__   = "dev"
 
 
-category = 'linear' # 'spot' or 'linear
+category     = 'linear' # 'spot' or 'linear
 
-lastSentJS = 'last_sent.json'
+lastSentJS   = 'last_sent.json'
 
-sign_buy	= '🟢'
-sign_sell	= '🔴'
+sign_buy     = '🟢'
+sign_sell    = '🔴'
 
 # notify via Telegram, bot:
-TMapiToken	= '' # '' means do not send
-TMchatID	= '' # to user personally, '' means DO NOT SEND
+TMapiToken   = '' # '' means do not send
+TMchatID     = '' # to user personally, '' means DO NOT SEND
 
 
 if __name__ == '__main__':
