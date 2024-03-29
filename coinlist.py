@@ -20,10 +20,10 @@ coinlist = {
 }
 
 # more coins to watch:
-#	DOT		SUI		TIA		LTC		TKO		INJ		ARB		BEAM
-#	TWT		OP		FLM		BLUR	ING		BNB		ATOM	AXS
-#	XVS		FLR		HIGH	BONK	BEAM	SOL		FXS		KEY
-#	XVS		DOT		ARB		AI		HOT
+#	DOT  SUI  TIA   LTC   TKO   INJ  ARB   BEAM
+#	TWT  OP	  FLM   BLUR  ING   BNB  ATOM  AXS
+#	XVS  FLR  HIGH  BONK  BEAM  SOL  FXS   KEY
+#	XVS  DOT  ARB   AI    HOT
 
 
 if __name__ == '__main__':

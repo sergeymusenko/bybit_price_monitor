@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-__project__	= "Price monitor for Bybit, send to Telegram"
-__part__	= 'Main config'
-__author__	= "Sergey V Musenko"
-__email__	= "sergey@musenko.com"
+__project__  = "Price monitor for Bybit, send to Telegram"
+__part__     = 'Main config'
+__author__   = "Sergey V Musenko"
+__email__    = "sergey@musenko.com"
 __copyright__= "© 2024, musenko.com"
-__license__	= "MIT"
-__credits__	= ["Sergey Musenko"]
-__date__	= "2024-03-290"
-__version__	= "0.1"
-__status__	= "dev"
+__license__  = "MIT"
+__credits__  = ["Sergey Musenko"]
+__date__     = "2024-03-290"
+__version__  = "0.1"
+__status__   = "dev"
 
 
 category = 'linear' # 'spot' or 'linear
