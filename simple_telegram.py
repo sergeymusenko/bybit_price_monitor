@@ -7,15 +7,15 @@ see: https://psujit775.medium.com/ihow-to-send-telegram-message-with-python-e826
 note: it does not support buttons!
 '''
 
-__project__	= "Lotteries Results Scrapper"
-__part__	= 'Telegram notifier'
-__author__	= "Sergey V Musenko"
-__email__	= "sergey@musenko.com"
-__license__	= "MIT"
-__copyright__= "© 2024, musenko.com"
-__credits__	= ["Sergey Musenko"]
-__date__	= "2024-01-15"
-__version__	= "0.1"
+__project__ = "Lotteries Results Scrapper"
+__part__ = 'Telegram notifier'
+__author__ = "Sergey V Musenko"
+__email__ = "sergey@musenko.com"
+__license__ = "MIT"
+__copyright__ = "© 2024, musenko.com"
+__credits__ = ["Sergey Musenko"]
+__date__ = "2024-01-15"
+__version__ = "0.1"
 
 __instructions__ = '''
 Create a Telegram bot
@@ -33,8 +33,10 @@ Create a Telegram bot
 * To get group ID: https://t.me/username_to_id_bot
 '''
 
+
 import requests
 import time
+
 
 def send_to_telegram(apiToken, chatID, message='', mode='HTML', print_exception=True):
 	if not apiToken or not chatID or not message:

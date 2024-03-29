@@ -26,7 +26,7 @@ __email__    = "sergey@musenko.com"
 __copyright__= "© 2024, musenko.com"
 __license__  = "MIT"
 __credits__  = ["Sergey Musenko"]
-__date__     = "2024-03-290"
+__date__     = "2024-03-29"
 __version__  = "0.1"
 __status__   = "dev"
 
