@@ -3,6 +3,9 @@
 main.py - Price monitor for Bybit
 
 Works as cron script. Start it each hour.
+# bybit_price_monitor: each hour cron, since 2024-04-11
+1   */1 * * *   /path/bybit_price_monitor/main.py 2>&1 | tee -a /path/bybit_price_monitor/cron-log.txt
+
 Not using auth at Bybit.
 Can send Telegram message to a Group or to personal account, see config.py
 In message:

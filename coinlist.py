@@ -7,23 +7,21 @@ __part__    = 'Coins config'
 coinlist = {
 	'BTCUSDT': {
 		'threshold': 1.5, # %
-		'prices': [73800, 61100, 63000],
+		'prices': [73978., 68045., 65797., 61838., 59150.],
 	},
 	'ETHUSDT': {
 		'threshold': 2.0, # %
-		'prices': [4060., 2300.],
+		'prices': [3404., 3387., 3304., 2939.],
 	},
 	'SOLUSDT': {
 		'threshold': 5., # %
-		'prices': [85.5, 202.3],
-	},
+		'prices': [164., 750.],
+	}, # WIF, GRT, JUP, BONK, PYTH, AKT, GMT, RAY, JTO
 }
 
 # more coins to watch:
-#	DOT  SUI  TIA   LTC   TKO   INJ  ARB   BEAM
-#	TWT  OP	  FLM   BLUR  ING   BNB  ATOM  AXS
-#	XVS  FLR  HIGH  BONK  BEAM  SOL  FXS   KEY
-#	XVS  DOT  ARB   AI    HOT
+# AI  ARB  AXS  BEAM  BLUR  BNB  DOT  FLM  FLR  FXS  HIGH  XVS
+# HOT ING  INJ  ATOM  BONK  KEY  LTC  OP   SUI  TIA  TKO   TWT
 
 
 if __name__ == '__main__':
