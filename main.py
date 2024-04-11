@@ -46,6 +46,9 @@ import socket
 if socket.gethostname() == 'sereno':
 	from config_local import *
 
+import os
+dirname = os.path.dirname(os.path.abspath(__file__))
+os.chdir(dirname) # need to save status file
 
 def s(n):
 	try: n = int(n)
