@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 """\
-main.py - Price monitor for Bybit
+main.py - Price monitor for Investment
 
 Works as cron script. Start it each hour.
-# bybit_price_monitor: each hour cron, since 2024-04-11
-1   */1 * * *   /path/bybit_price_monitor/main.py 2>&1 | tee -a /path/bybit_price_monitor/cron-log.txt
+# coin_price_monitor:, since 2024-04-11
+each 10 min
+*/10 * * * *   /path/coin_price_monitor/main.py 2>&1 | tee -a /path/coin_price_monitor/cron-log.txt
 
-Not using auth at Bybit.
-Can send Telegram message to a Group or to personal account, see config.py
-In message:
+Can send Telegram message. In message:
 	"green" mark means we going down to the price level - time to buy
 	"red" mark means we going up to the price level - time to sell
+	"+n% to nnn.nn" means "higher then nnn.n"
+	"-n% to nnn.nn" means "lower then nnn.n"
 Send signal again if we moved closer or changed price level. Otherwize no repeat same coin signal.
 Last sent json file format: {'symbol': ['%', 'priceLevel', 'lastPrice', 'dateTime'],}
 
 How to connect to Telegram: see instructions in simple_telegram.py module.
-You can send to a group or to user account personally.
+You can send to a group or to user account personally, see config.py
 
-docs: https://bybit-exchange.github.io/docs/v5/intro
-pip install pybit
+Uses binance public API: https://api.binance.com/api/v3/ticker/price?symbols=[...]
 """
 
 
-__project__  = "Price monitor for Bybit, send to Telegram"
+__project__  = "Price monitor for Investment, send to Telegram"
 __part__     = 'Main script'
 __author__   = "Sergey V Musenko"
 __email__    = "sergey@musenko.com"
@@ -39,28 +39,38 @@ from coinlist import *
 from simple_telegram import *
 from datetime import datetime
 import json
-from pybit.unified_trading import HTTP
 
 # get my secret LOCAL_CONFIG:
 import socket
 if socket.gethostname() == 'sereno':
 	from config_local import *
 
+# go to working directory to save status file
 import os
-dirname = os.path.dirname(os.path.abspath(__file__))
-os.chdir(dirname) # need to save status file
-
-def s(n):
-	try: n = int(n)
-	except Exception as e: n = 0
-	return 's' if n>1 else ''
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def main():
 	time_mark = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
-	# open Bybit session
-	session = HTTP()
+	# get symbol prices from Binance
+	try:
+		# make symbols list
+		symbols = []
+		for coin in coinlist:
+			symbols.append(coin)
+		# make request url
+		URL = "https://api.binance.com/api/v3/ticker/price?symbols=" \
+			+ json.dumps(symbols).replace(' ', '')
+		# requesting data from url
+		tickers = requests.get(URL).json()
+		# debug: tickers = [{'symbol': 'ETHUSDT', 'price': '3143.86000000'},{'symbol': 'SOLUSDT', 'price': '140.26000000'},{'symbol': 'FILUSDT', 'price': '6.02600000'},{'symbol': 'APEUSDT', 'price': '1.19700000'},{'symbol': 'OPUSDT', 'price': '2.32500000'},{'symbol': 'APTUSDT', 'price': '9.32250000'},{'symbol': 'ARBUSDT', 'price': '1.18670000'},{'symbol': 'PEPEUSDT', 'price': '0.00000510'},{'symbol': 'TIAUSDT', 'price': '9.63000000'},{'symbol': 'STRKUSDT', 'price': '1.34900000'}]
+		coinPrice = {}
+		for tick in tickers:
+			coinPrice[tick['symbol']] = float(tick['price'])
+	except Exception as e:
+		print(f"Error getting ticker: {str(e)}")
+		return False
 
 	# check coins and build message
 	countCoins = 0
@@ -73,29 +83,29 @@ def main():
 			if 'prices' in coinlist[coin] and type(coinlist[coin]['prices']) is list:
 				coinlist[coin]['prices'].sort() # sort prices ascending
 			else: # prices not defined...
+				print(f"Error: there is no 'prices' for '{coin}'")
 				continue
 			if 'threshold' not in coinlist[coin]:
-				coinlist[coin]['threshold'] = 1. # default is 1%
+				coinlist[coin]['threshold'] = defaultTreshold
 			threshold = float(coinlist[coin]['threshold'])
 
-			# print(f"checking {coin}")
-
-			# get data from Bybit
-			res = session.get_tickers(category=category, symbol=coin)
-			rlst = res.get('result', {}).get('list',[])[0]
-			lastPrice = float(rlst.get('lastPrice', 0))
+			# get coin price
+			if coin not in coinPrice:
+				print(f"Error: unknown price for '{coin}'")
+				continue
+			lastPrice = coinPrice[coin]
 			coinlist[coin]['lastPrice'] = lastPrice
 			countCoins += 1
 
 			# check prices and select nearest to lastPrice
-			minTreshold = 100.
+			minTreshold = 100. # will detect real value below
 			for price in coinlist[coin]['prices']:
 				diff = lastPrice - price # >0 aboce, <0 below
 				diffSign = '+' if diff>=0 else '-' # forcing '+' and '-' sign for %%
 				diffMark = sign_buy if diff>=0 else sign_sell # color marks for message
 				curTreshold = abs(round(100 * diff / price, 1)) # in %
 				if curTreshold <= threshold and curTreshold < minTreshold:
-					coinlist[coin]['message'] = f"{diffMark}{coin} {lastPrice}:\n{diffSign}{curTreshold}% to {price}{', spot' if category=='spot' else ''}"
+					coinlist[coin]['message'] = f"{diffMark}{coin} {lastPrice}:\n{diffSign}{curTreshold}% to {price}"
 					coinlist[coin]['checkPrice'] = price
 					coinlist[coin]['lastThreshold'] = curTreshold # save nearest % to coin
 					minTreshold = curTreshold # to check next price level
@@ -123,7 +133,7 @@ def main():
 			lastSentThreshold = lastSent[coin][0] if coin in lastSent else 100. # '100' means not found
 		# send only if it is closer then last sent
 		if lastSentThreshold > coinlist[coin]['lastThreshold']:
-			TGmessage += coinlist[coin]['message'] # save into TG message
+			TGmessage += coinlist[coin]['message'] + '\n' # save into TG message
 			countMsg += 1
 			lastSent[coin] = [
 				coinlist[coin]['lastThreshold'],
@@ -142,11 +152,17 @@ def main():
 
 	# if message not empty send messages
 	if TGmessage and TMchatID:
-		send_to_telegram(TMapiToken, TMchatID, TGmessage)
+		send_to_telegram(TMapiToken, TMchatID, TGmessage.strip())
 
 	# print report
 	if not countMsg: countMsg = 'no'
-	print(f'{time_mark} {__project__}: {countCoins} coins, {countMsg} signal{s(countMsg)}')
+	print(f'{time_mark} {__project__}: {countCoins} coin{s(countCoins)}, {countMsg} signal{s(countMsg)}')
+
+
+def s(n):
+	try: n = int(n)
+	except Exception as e: n = 0
+	return 's' if n>1 else ''
 
 
 if __name__ == '__main__':

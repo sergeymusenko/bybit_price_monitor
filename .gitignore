@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 config_local.py
+main.bybit_ver.py
 *.txt
 *.json

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-__project__  = "Price monitor for Bybit, send to Telegram"
+__project__  = "Price monitor for Investment, send to Telegram"
 __part__     = 'Main config'
 __author__   = "Sergey V Musenko"
 __email__    = "sergey@musenko.com"
@@ -11,8 +11,6 @@ __date__     = "2024-03-29"
 __version__  = "0.1"
 __status__   = "dev"
 
-
-category     = 'linear' # 'spot' or 'linear
 
 lastSentJS   = 'last_sent.json'
 
