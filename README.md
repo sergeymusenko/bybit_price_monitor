@@ -12,9 +12,8 @@ Checks prices of coins comparing to price levels in `coinlist.py` and sends Tele
 Checks prices on Binance 'spot', does not support 'futures'.
 
 In Telegram message:
-
-- "green" mark means we going down to the price level - time to buy,
-- "red" mark means we going up to the price level - time to sell.
+> "green" mark means we going down to the price level - time to buy,<br/>
+> "red" mark means we going up to the price level - time to sell.
 
 Send signal again if we moved closer or changed price level. Otherwize no repeat same coin signal.
 
