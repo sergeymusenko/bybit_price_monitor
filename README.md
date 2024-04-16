@@ -4,7 +4,10 @@ For Crypto Exchange: Price monitor, using Binance public API.
 
 https://github.com/sergeymusenko/coin_price_monitor
 
-Works as cron script. Start it each hour.<br/>
+Works as cron script. Start it each hour. Use: `crontab -e`
+> \# coin_price_monitor: each *:01<br/>
+> 1 * * * *   /path.../coin_price_monitor/main.py 2>&1 | tee -a /path.../coin_price_monitor/cron-log.txt
+
 Checks prices of coins comparing to price levels in `coinlist.py` and sends Telegram signals on getting close.<br/>
 Checks prices on Binance 'spot', does not support 'futures'.
 
