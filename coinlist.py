@@ -6,29 +6,27 @@ __part__    = 'Coins config'
 defaultTreshold = 0.5 # %
 coinlist = {
 	'ETHUSDT': {
+		'threshold': 1., # %
+		'prices': [2919., 2846.7],
+	},
+	'LTCUSDT': {
 		'threshold': 1.5, # %
-		'prices': [2980.],
+		'prices': [64.54],
 	},
 	'PEPEUSDT': {
-		'prices': [0.0000041877],
+		'prices': [0.0000041877, 0.0000048591],
 	},
 	'TIAUSDT': {
 		'prices': [8.917],
-	},
-	'LITUSDT': {
-		'prices': [0.9533],
 	},
 	'WAXPUSDT': {
 		'prices': [0.05826],
 	},
 	'BONKUSDT': {
-		'prices': [0.0000134326],
+		'prices': [0.00001106],
 	},
 	'RADUSDT': {
 		'prices': [1.624],
-	},
-	'AAVEUSDT': {
-		'prices': [81.22],
 	},
 	'CELRUSDT': {
 		'prices': [0.02057],
@@ -37,15 +35,26 @@ coinlist = {
 		'prices': [0.5108],
 	},
 	'SHIBUSDT': {
-		'prices': [0.00001944],
-	},
-	'OCEANUSDT': {
-		'prices': [0.8106],
+		'prices': [0.00002091, 0.00001944],
 	},
 	'DOGEUSDT': {
-		'threshold': 2., # %
 		'prices': [0.11691],
 	},
+	'LITUSDT': {
+		'prices': [0.815],
+	},
+	'SOLUSDT': {
+		'prices': [135.4],
+	},
+	'XRPUSDT': {
+		'prices': [0.499],
+	},
+#	'OCEANUSDT': {
+#		'prices': [0.8106],
+#	},
+#	'AAVEUSDT': {
+#		'prices': [81.22],
+#	},
 #	'ADAUSDT': {
 #		'prices': [0.4451],
 #	},
@@ -54,9 +63,6 @@ coinlist = {
 #	},
 #	'APTUSDT': {
 #		'prices': [8.1988],
-#	},
-#	'SOLUSDT': {
-#		'prices': [135.3],
 #	},
 #	'OPUSDT': {
 #		'prices': [2.152, 1.8, 1.5],
@@ -116,8 +122,8 @@ coinlist = {
 }
 # more coins to watch:
 # AI  BEAM BLUR BNB  DOT  FLM  FLR  FXS  HIGH  XVS
-# HOT ING  INJ  KEY  LTC  OP   SUI  TIA  TKO
-# WIF GRT  JUP  PYTH AKT  GMT  RAY  JTO  TWT
+# HOT INJ  KEY  LTC  SUI  TIA  TKO  JTO  TWT
+# WIF GRT  JUP  PYTH AKT  GMT  RAY
 
 if __name__ == '__main__':
 	print(__part__)

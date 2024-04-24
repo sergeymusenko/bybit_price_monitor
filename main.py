@@ -22,7 +22,7 @@ Uses binance public API: https://api.binance.com/api/v3/ticker/price?symbols=[..
 """
 
 
-__project__  = "Price monitor for Investment, send to Telegram"
+__project__  = "Price monitor for Investment, notify Telegram"
 __part__     = 'Main script'
 __author__   = "Sergey V Musenko"
 __email__    = "sergey@musenko.com"
