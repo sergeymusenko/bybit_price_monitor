@@ -11,7 +11,7 @@ coinlist = {
 	},
 	'LTCUSDT': {
 		'threshold': 1.5, # %
-		'prices': [64.54],
+		'prices': [68.6],
 	},
 	'PEPEUSDT': {
 		'prices': [0.0000041877, 0.0000048591],
@@ -29,10 +29,10 @@ coinlist = {
 		'prices': [1.624],
 	},
 	'CELRUSDT': {
-		'prices': [0.02057],
+		'prices': [0.0205, 0.0161],
 	},
 	'KNCUSDT': {
-		'prices': [0.5108],
+		'prices': [0.511],
 	},
 	'SHIBUSDT': {
 		'prices': [0.00002091, 0.00001944],
@@ -44,10 +44,32 @@ coinlist = {
 		'prices': [0.815],
 	},
 	'SOLUSDT': {
-		'prices': [135.4],
+		'prices': [97.1],
 	},
 	'XRPUSDT': {
 		'prices': [0.499],
+	},
+	'FLOKIUSDT': {
+		'prices': [0.0001698, 0.000135,],
+	},
+	'OPUSDT': {
+		'prices': [2.1],
+	},
+	'SUSHIUSDT': {
+		'prices': [0.9495],
+	},
+	'PEOPLEUSDT': {
+		'prices': [0.02211],
+	},
+	'NEOUSDT': {
+		'prices': [14.1, 11.2],
+	},
+	'HBARUSDT': {
+		'prices': [0.0796],
+	},
+	'COMPUSDT': {
+		'threshold': 1.5, # %
+		'prices': [53.27],
 	},
 #	'OCEANUSDT': {
 #		'prices': [0.8106],
@@ -63,9 +85,6 @@ coinlist = {
 #	},
 #	'APTUSDT': {
 #		'prices': [8.1988],
-#	},
-#	'OPUSDT': {
-#		'prices': [2.152, 1.8, 1.5],
 #	},
 #	'APEUSDT': {
 #		'prices': [1.131, 1.025],
@@ -115,9 +134,6 @@ coinlist = {
 #	'BTCUSDT': {
 #		'threshold': 1.0, # %
 #		'prices': [73978., 68045., 65797., 61838., 59150.],
-#	},
-#	'FLOKIUSDT': {
-#		'prices': [0.0001305],
 #	},
 }
 # more coins to watch:
