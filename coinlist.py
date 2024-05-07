@@ -5,6 +5,35 @@ __part__    = 'Coins config'
 
 defaultTreshold = 0.5 # %
 coinlist = {
+	'SUIUSDT': {
+		'prices': [1.0759, 1.0098, 0.885],
+	},
+
+	'ARBUSDT': {
+		'prices': [1.031, 0.979],
+	},
+	'OPUSDT': {
+		'prices': [2.1-4],
+	},
+	'STRKUSDT': {
+		'prices': [1.132],
+	},
+	'ATOMUSDT': {
+		'prices': [7.8, 7.33],
+	},
+	'APTUSDT': {
+		'prices': [8.1988],
+	},
+	'FLOKIUSDT': {
+		'prices': [0.000148, 0.000128,],
+	},
+	'SOLUSDT': {
+		'prices': [133., 122.6],
+	},
+	'DOGEUSDT': {
+		'prices': [0.12197],
+	},
+
 	'ETHUSDT': {
 		'threshold': 1., # %
 		'prices': [2919., 2846.7],
@@ -12,12 +41,6 @@ coinlist = {
 	'LTCUSDT': {
 		'threshold': 1.5, # %
 		'prices': [68.6],
-	},
-	'PEPEUSDT': {
-		'prices': [0.0000041877, 0.0000048591],
-	},
-	'TIAUSDT': {
-		'prices': [8.917],
 	},
 	'WAXPUSDT': {
 		'prices': [0.05826],
@@ -37,23 +60,8 @@ coinlist = {
 	'SHIBUSDT': {
 		'prices': [0.00002091, 0.00001944],
 	},
-	'DOGEUSDT': {
-		'prices': [0.11691],
-	},
 	'LITUSDT': {
 		'prices': [0.815],
-	},
-	'SOLUSDT': {
-		'prices': [97.1],
-	},
-	'XRPUSDT': {
-		'prices': [0.499],
-	},
-	'FLOKIUSDT': {
-		'prices': [0.0001698, 0.000135,],
-	},
-	'OPUSDT': {
-		'prices': [2.1],
 	},
 	'SUSHIUSDT': {
 		'prices': [0.9495],
@@ -67,10 +75,19 @@ coinlist = {
 	'HBARUSDT': {
 		'prices': [0.0796],
 	},
-	'COMPUSDT': {
-		'threshold': 1.5, # %
-		'prices': [53.27],
-	},
+#	'XRPUSDT': {
+#		'prices': [0.499],
+#	},
+#	'PEPEUSDT': {
+#		'prices': [0.0000041877, 0.0000048591],
+#	},
+#	'TIAUSDT': {
+#		'prices': [8.917],
+#	},
+#	'COMPUSDT': {
+#		'threshold': 1.5, # %
+#		'prices': [53.27],
+#	},
 #	'OCEANUSDT': {
 #		'prices': [0.8106],
 #	},
@@ -83,17 +100,8 @@ coinlist = {
 #	'MATICUSDT': {
 #		'prices': [0.6881],
 #	},
-#	'APTUSDT': {
-#		'prices': [8.1988],
-#	},
 #	'APEUSDT': {
 #		'prices': [1.131, 1.025],
-#	},
-#	'ARBUSDT': {
-#		'prices': [1.031, 0.912],
-#	},
-#	'ATOMUSDT': {
-#		'prices': [7.43],
 #	},
 #	'ENSUSDT': {
 #		'prices': [11.5],
@@ -115,9 +123,6 @@ coinlist = {
 #	},
 #	'SANDUSDT': {
 #		'prices': [0.4258],
-#	},
-#	'STRKUSDT': {
-#		'prices': [1.29],
 #	},
 #	'FILUSDT': {
 #		'prices': [5.720],
