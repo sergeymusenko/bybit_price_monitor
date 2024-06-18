@@ -23,7 +23,7 @@ You can send to a group or to user account personally. Set config.py
 """
 
 
-__project__  = "Price monitor for Investment, notify Telegram"
+__project__  = "Price monitoring for Investment/Trading, notify Telegram"
 __part__     = 'Main script'
 __author__   = "Sergey V Musenko"
 __email__    = "sergey@musenko.com"
@@ -65,6 +65,8 @@ if socket.gethostname() in ['sereno', 'vostro']:
 
 
 def main():
+	global sign_buy, sign_sell, sign_nothig, sign_uparr, sign_dnarr, sign_noarr
+
 	if not coinlist: exit(0)
 	time_mark = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -160,9 +162,9 @@ def main():
 				#diffMark = sign_uparr if lastPrice > avgPrice else sign_dnarr if lastPrice < avgPrice else sign_noarr
 
 				# show a message? we will select closest price from coinlist prices
-				curTreshold = abs(round(100 * diff / price, 1)) # in %
+				curTreshold = abs(round(100 * diff / price, 1)) # float, in %
 				if curTreshold==0.:
-					curTreshold = 0
+					curTreshold = 0 # int, just to be shorter
 					diffSign = ''
 				if curTreshold <= threshold and curTreshold < minTreshold: # have to show a message!
 					coinlist[coin]['message'] = f"{diffMark}{coin} {lastPrice}:\n{diffSign}{curTreshold}% to {price}"

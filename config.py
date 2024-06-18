@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-__project__  = "Price monitor for Investment, send to Telegram"
+__project__  = "Price monitoring for Investment/Trading, notify Telegram"
 __part__     = 'Main config'
 __author__   = "Sergey V Musenko"
 __email__    = "sergey@musenko.com"
