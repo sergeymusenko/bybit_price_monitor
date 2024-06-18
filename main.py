@@ -41,7 +41,7 @@ srcURL = "https://api.binance.com/api/v3/ticker/price?symbols="
 # mesage mark (direction):
 sign_buy     = '🟢'
 sign_sell    = '🔴'
-sign_nothig  = '🔵'
+sign_nothing = '🔵'
 sign_uparr   = '⏫' # '▲' '↗'
 sign_dnarr   = '⏬' # '▼'  '↘'
 sign_noarr   = '⏯'  # '-'
@@ -65,8 +65,6 @@ if socket.gethostname() in ['sereno', 'vostro']:
 
 
 def main():
-	global sign_buy, sign_sell, sign_nothig, sign_uparr, sign_dnarr, sign_noarr
-
 	if not coinlist: exit(0)
 	time_mark = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 

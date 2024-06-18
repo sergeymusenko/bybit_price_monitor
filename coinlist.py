@@ -13,7 +13,7 @@ coinlist = {
 	'APTUSDT': {
 		'prices': [ 7.6299, 6.9511, 6.68 ],
 	},
-	# buy more on spot
+	# buy more on spot:
 	'NOTUSDT': {
 		'prices': [0.020321],
 	},
@@ -29,10 +29,9 @@ coinlist = {
 	'WLDUSDT': {
 		'prices': [4.6],
 	},
-#	'MEWUSDT': { # have no at Binance yet
+#	'MEWUSDT': { # not at Binance yet
 #		'prices': [0.41],
 #	},
-
 }
 
 if __name__ == '__main__':
