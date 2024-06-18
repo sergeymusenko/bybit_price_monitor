@@ -12,10 +12,10 @@ __version__  = "0.1"
 __status__   = "dev"
 
 
-lastSentJS   = 'last_sent.json'
+lastPricesJS = 'last_prices.json'
+lastPricesAvgLen = 6 # store n last prices, 6 * 10min = 1 last hour
 
-sign_buy     = '🟢'
-sign_sell    = '🔴'
+lastSentJS   = 'last_sent.json'
 
 # notify via Telegram, bot:
 TMapiToken   = '' # '' means do not send

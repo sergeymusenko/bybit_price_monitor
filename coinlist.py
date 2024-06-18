@@ -3,83 +3,108 @@
 __project__  = "Price monitor for Investment, send to Telegram"
 __part__    = 'Coins config'
 
-defaultTreshold = 0.5 # %
+defaultThreshold = 0.5 # %
 coinlist = {
+	# close a position
 	'SUIUSDT': {
-		'prices': [1.0759, 1.0098, 0.885],
-	},
-
-	'ARBUSDT': {
-		'prices': [1.031, 0.979],
-	},
-	'OPUSDT': {
-		'prices': [2.1-4],
-	},
-	'STRKUSDT': {
-		'prices': [1.132],
-	},
-	'ATOMUSDT': {
-		'prices': [7.8, 7.33],
+		#'threshold': 0.3, # %
+		'prices': [ 0.9528, 0.9082 ],
 	},
 	'APTUSDT': {
-		'prices': [8.1988],
+		'prices': [ 7.6299, 6.9511 ],
 	},
+
+}
+'''
+	# докупить на spot
+#	'NOTUSDT': {
+#		'prices': [0.020321],
+#	},
+#	'BONKUSDT': {
+#		'prices': [0.0000287],
+#	},
 	'FLOKIUSDT': {
-		'prices': [0.000148, 0.000128,],
+		'prices': [0.00024, 0.00021, 0.00017],
+	},
+	'BLURUSDT': {
+		'prices': [0.36],
+	},
+	'WLDUSDT': {
+		'prices': [4.6],
+	},
+#	'MEWUSDT': { # no at Binance
+#		'prices': [0.41],
+#	},
+	# потенциал роста
+	'ETHUSDT': {
+		'threshold': 1., # %
+		'prices': [3060.],
+	},
+	'STRKUSDT': {
+		'prices': [1.17, 1.09],
+	},
+	'BNBUSDT': {
+		'prices': [599.],
+	},
+	'ATOMUSDT': {
+		'prices': [8.23, 7.73],
+	},
+	'MATICUSDT': {
+		'prices': [0.6517, 0.69],
 	},
 	'SOLUSDT': {
-		'prices': [133., 122.6],
+		'prices': [142.],
+	},
+	'WUSDT': {
+		'prices': [0.56, 0.62],
+	},
+	'PEPEUSDT': {
+		'prices': [ 0.0000124, 0.000011 ],
 	},
 	'DOGEUSDT': {
 		'prices': [0.12197],
 	},
-
-	'ETHUSDT': {
-		'threshold': 1., # %
-		'prices': [2919., 2846.7],
-	},
-	'LTCUSDT': {
-		'threshold': 1.5, # %
-		'prices': [68.6],
-	},
-	'WAXPUSDT': {
-		'prices': [0.05826],
-	},
-	'BONKUSDT': {
-		'prices': [0.00001106],
-	},
-	'RADUSDT': {
-		'prices': [1.624],
-	},
-	'CELRUSDT': {
-		'prices': [0.0205, 0.0161],
-	},
-	'KNCUSDT': {
-		'prices': [0.511],
-	},
 	'SHIBUSDT': {
-		'prices': [0.00002091, 0.00001944],
-	},
-	'LITUSDT': {
-		'prices': [0.815],
-	},
-	'SUSHIUSDT': {
-		'prices': [0.9495],
+		'prices': [0.0000219, 0.0000237],
 	},
 	'PEOPLEUSDT': {
-		'prices': [0.02211],
+		'prices': [0.103, 0.077],
 	},
-	'NEOUSDT': {
-		'prices': [14.1, 11.2],
+	'ARBUSDT': {
+		'prices': [1.031, 0.979],
 	},
-	'HBARUSDT': {
-		'prices': [0.0796],
+	'OPUSDT': {
+		'prices': [2.34],
 	},
+#	'LTCUSDT': {
+#		'prices': [76.],
+#	},
+#	'WAXPUSDT': {
+#		'prices': [0.05826],
+#	},
+#	'RADUSDT': {
+#		'prices': [1.624],
+#	},
+#	'CELRUSDT': {
+#		'prices': [0.0205, 0.0161],
+#	},
+#	'KNCUSDT': {
+#		'prices': [0.511],
+#	},
+#	'LITUSDT': {
+#		'prices': [0.815],
+#	},
+#	'SUSHIUSDT': {
+#		'prices': [0.9495],
+#	},
+#	'NEOUSDT': {
+#		'prices': [14.1, 11.2],
+#	},
+#	'HBARUSDT': {
+#		'prices': [0.0796],
+#	},
 #	'XRPUSDT': {
 #		'prices': [0.499],
-#	},
-#	'PEPEUSDT': {
-#		'prices': [0.0000041877, 0.0000048591],
 #	},
 #	'TIAUSDT': {
 #		'prices': [8.917],
@@ -96,9 +121,6 @@ coinlist = {
 #	},
 #	'ADAUSDT': {
 #		'prices': [0.4451],
-#	},
-#	'MATICUSDT': {
-#		'prices': [0.6881],
 #	},
 #	'APEUSDT': {
 #		'prices': [1.131, 1.025],
@@ -140,12 +162,7 @@ coinlist = {
 #		'threshold': 1.0, # %
 #		'prices': [73978., 68045., 65797., 61838., 59150.],
 #	},
-}
-# more coins to watch:
-# AI  BEAM BLUR BNB  DOT  FLM  FLR  FXS  HIGH  XVS
-# HOT INJ  KEY  LTC  SUI  TIA  TKO  JTO  TWT
-# WIF GRT  JUP  PYTH AKT  GMT  RAY
-
+'''
 if __name__ == '__main__':
 	print(__part__)
 	for coin in coinlist:
